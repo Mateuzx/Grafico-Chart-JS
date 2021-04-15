@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grafico Chart JS</title>
+</head>
+
+<style>
+    .div_grafico {
+        width: 60%;
+        margin: auto;
+    }
+</style>
+
+<body>
+
+    <div class="div_grafico">
+    <canvas class="line-chart"></canvas>
+    </div>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
+    <script>
+        var ctx = document.getElementsByClassName("line-chart");
+
+        // Type,Data e options
+        var chartGraph = new Chart(ctx, {
+            //Definindo o type
+            type: 'line',
+            data: {
+                labels: ["2018", "2019", "2020", "2021"],
+                datasets: [{
+                    label: "Nossa taxa de rendimentos",
+                    data: [55000, 12000, 33000, 88000],
+                    borderWidth: 6,
+                    borderColor: 'gray',
+                    backgroundColor: 'transparent',
+                    pointStyle: 'star',
+                    pointRadius: 10
+
+                }, {
+                    label: "Taxa de rendimentos da empresa rival",
+                    data: [100000, 5000, 12000, 20000],
+                    borderWidth: 6,
+                    borderColor: 'red',
+                    backgroundColor: 'transparent'
+                }]
+            },
+            options:{
+                title: {
+                    display:true,
+                    text:"Relatorio geral de rendimentos",
+                    fontSize:20,
+                },
+                labels:{
+                    fontStyle:"bold"
+                }
+            }
+
+            
+
+        });
+    </script>
+
+
+</body>
+
+</html>
